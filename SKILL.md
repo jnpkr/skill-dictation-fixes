@@ -1,9 +1,9 @@
 ---
-name: "dictation-fix-prompt"
+name: "dictation-fixes"
 description: "Use whenever the user's message contains a likely dictation or transcription error: a misspelling, a misheard word, a wrong homophone, or a name or term that doesn't fit the context and probably isn't what they meant. Prompts them to add the correction to their dictation app's dictionary."
 ---
 
-# Dictation fix prompt
+# Dictation fixes
 
 The user often dictates their messages, so some words get transcribed wrong. When you spot one, remind them to add it to their dictation app so the mistake doesn't come back.
 

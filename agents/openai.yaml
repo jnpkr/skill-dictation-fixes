@@ -1,6 +1,6 @@
 interface:
-  display_name: "Dictation Fix Prompt"
+  display_name: "Dictation Fixes"
   short_description: "Flag likely dictation errors for your dictionary"
-  default_prompt: "Use $dictation-fix-prompt to flag any words in my message that were probably transcribed wrong."
+  default_prompt: "Use $dictation-fixes to flag any words in my message that were probably transcribed wrong."
 policy:
   allow_implicit_invocation: true
