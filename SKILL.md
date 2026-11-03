@@ -1,33 +1,33 @@
 ---
 name: "dictation-fixes"
-description: "Use whenever the user's message contains a likely dictation or transcription error: a misspelling, a misheard word, a wrong homophone, or a name or term that doesn't fit the context and probably isn't what they meant. Prompts them to add the correction to their dictation app's dictionary."
+description: "Flag likely speech recognition errors where the intended name, specialist term, acronym or phrase would be a useful addition to the user's dictation hotwords. Excludes ordinary spelling and typing mistakes and common-word homophone errors."
 ---
 
 # Dictation fixes
 
-The user often dictates their messages, so some words get transcribed wrong. When you spot one, remind them to add it to their dictation app so the mistake doesn't come back.
+Help the user identify useful additions to their dictation app's hotwords from likely speech recognition errors in their messages.
 
 ## When to trigger
 
-Trigger when a word or phrase in the user's message, dictated or typed, is probably not what they meant. This includes:
+Trigger when both conditions hold:
 
-- misspellings
-- misheard words or homophones ("their" for "there", "sink" for "sync")
-- names, products, client names or jargon that came out wrong ("clawed" for "Claude")
-- odd words that don't fit the context
+1. The wording is probably a speech recognition error: it sounds like the intended wording but doesn't fit the context.
+2. The intended wording is clear and would be a useful hotword, such as a person's name, organisation, product, technical term, acronym or specialised phrase.
 
-Don't trigger for deliberate slang or for anything you've already flagged earlier in the conversation.
+For example, "clawed" for "Claude" is a useful candidate. A common-word homophone error such as "their" for "there" is a context problem, not a useful hotword suggestion. A recognition error alone isn't enough to justify a note.
+
+Leave ordinary spelling and typing mistakes unremarked, including transposed, missing or extra letters and misplaced apostrophes (for example, "odn't" for "don't"). An odd word alone isn't enough: there must be a plausible sound-based confusion. If a typing mistake is the more likely explanation, skip the note.
+
+Don't trigger for deliberate slang or for an intended hotword you've already suggested earlier in the conversation. If the intended wording or its usefulness as a hotword is uncertain, skip the note.
 
 ## What to do
 
 1. Work out what they meant and carry on with the request as normal. Don't stop to ask unless the meaning is unclear.
 2. At the end of your reply, add a short note in this format:
 
-> **Dictation fix:** "<what was transcribed>" → "<what you think they meant>". Consider adding "<intended word>" to your dictation app's dictionary or replacements.
+> **Dictation fix:** "<what was transcribed>" → "<intended wording>". Consider adding "<intended wording>" to your dictation app's hotwords.
 
 If there are several, list each on its own line under one **Dictation fixes:** heading.
-
-3. If you aren't sure what they meant, say so in the note and ask.
 
 ## Keep it light
 
